@@ -1,9 +1,9 @@
 // section 1
 [
-  { text: "Web Developer", icon: "fa-briefcase" },
-  { text: "Portsaid, Egypt", icon: "fa-house" },
-  { text: "mohamedeltabei2000@gmail.com", icon: "fa-envelope" },
-  { text: "01020210495", icon: "fa-phone" },
+  { text: "Designer", icon: "fa-briefcase" },
+  { text: "London, UK", icon: "fa-house" },
+  { text: "ex@mail.com", icon: "fa-envelope" },
+  { text: "1224435534", icon: "fa-phone" },
 ].forEach((element) => {
   let div = document.createElement("div");
   div.className = "d-flex align-items-center gap-3";
@@ -16,25 +16,17 @@
 
 // section 2
 [
-  { skill: "Mongodb", percent: 48 },
-  { skill: "Express", percent: 67 },
-  { skill: "React", percent: 63 },
-  { skill: "Nodejs", percent: 73 },
-  { skill: ".Net", percent: 51 },
-  { skill: "Bootstrap", percent: 85 },
-  { skill: "OOP", percent: 83 },
-  { skill: "JQuery", percent: 79 },
-  { skill: "SQL", percent: 76 },
-  { skill: "C#", percent: 78 },
-  { skill: "Javascript", percent: 83 },
-  { skill: "HTML", percent: 91 },
-  { skill: "CSS", percent: 92 },
+  { skill: "Adobe Photoshop", percent: 90 },
+  { skill: "Photography", percent: 80 },
+  { skill: "Illustrator", percent: 75 },
+  { skill: "Media", percent: 50 },
 ].forEach((element) => {
   div = document.createElement("div");
   div.innerHTML = `
     <small>${element.skill}</small>
     <div
-      class="progress"
+      class="progress rounded-5"
+      style="height:18px"      
       role="progressbar"
       aria-label="Example with label"
       aria-valuenow="${element.percent}"
@@ -50,14 +42,16 @@
 
 // section 3
 [
-  { laguage: "Arabic", percent: 100 },
-  { laguage: "English", percent: 48 },
+  { laguage: "English", percent: 100 },
+  { laguage: "Spanish", percent: 48 },
+  { laguage: "German", percent: 25 },
 ].forEach((element) => {
   div = document.createElement("div");
   div.innerHTML = `
       <small>${element.laguage}</small>
       <div
-        class="progress"
+        class="progress rounded-5"
+        style="height:24px"
         role="progressbar"
         aria-label="Example with label"
         aria-valuenow="${element.percent}"
@@ -68,4 +62,91 @@
         </div>
       </div>`;
   document.querySelectorAll("#section3 div")[1].append(div);
+});
+//footer social media
+
+[
+  "facebook",
+  "instagram",
+  "snapchat",
+  "pinterest",
+  "twitter",
+  "linkedin",
+].forEach((element) => {
+  let a = document.createElement("a");
+  a.className =
+    "link-light link-opacity-50 link-opacity-100-hover text-decoration-none";
+  a.innerHTML = `<i class="fa-brands fa-${element} me-2"></i>`;
+  a.href = "https://";
+
+  document.getElementById("socialMedia").append(a);
+});
+
+//Right section work experience
+[
+  {
+    work: "Front End Developer / w3schools.com",
+    duration: "Jan 2015 - Current",
+    description:
+      "Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.",
+  },
+  {
+    work: "Web Developer / something.com",
+    duration: "Mar 2012 - Dec 2014",
+    description:
+      "Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.",
+  },
+  {
+    work: "Graphic Designer / designsomething.com",
+    duration: "Jun 2010 - Mar 2012",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  },
+].forEach((element, i, arr) => {
+  const div = document.createElement("div");
+  div.className = `w-100 ${
+    i === arr.length - 1 ? "" : "border-bottom"
+  } p-3 d-flex flex-column gap-1`;
+  div.innerHTML = `
+    <h5 class="text-secondary">${element.work}</h5>
+    <h6 class="fw-normal text-green"><i class="fa-regular fa-calendar-days me-3"></i>${
+      element.duration.includes("Current")
+        ? element.duration.slice(0, element.duration.indexOf("Current")) +
+          `<span class="badge bg-green  p-2 ">Current</span>`
+        : element.duration
+    }</h6>
+
+    <p>${element.description}</p>
+  `;
+  document.getElementById("experience").append(div);
+});
+
+//Right section education
+[
+  {
+    place: "W3Schools.com",
+    duration: "Forever",
+    degree: "Web Development! All I need to know in one place",
+  },
+  {
+    place: "London Business School",
+    duration: "2013 - 2015",
+    degree: "Master Degree",
+  },
+  {
+    place: "School of Coding",
+    duration: "2010 - 2013",
+    degree: "Bachelor Degree",
+  },
+].forEach((element, i, arr) => {
+  const div = document.createElement("div");
+  div.className = `w-100 ${
+    i === arr.length - 1 ? "" : "border-bottom"
+  } p-3 d-flex flex-column gap-1`;
+  div.innerHTML = `
+    <h5 class="text-secondary">${element.place}</h5>
+    <h6 class="fw-normal text-green"><i class="fa-regular fa-calendar-days me-3"></i>${element.duration}</h6>
+
+  <p>${element.degree}</p>
+`;
+  document.getElementById("education").append(div);
 });
