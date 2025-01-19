@@ -1,23 +1,14 @@
 body {
   background-color: #f1f1f1;
+  font-family: sans-serif;
+  font-size: 15px;
 }
 img[class="img-thumbnail"] {
-  max-width: 100%;
   border: none;
   border-radius: 0px;
   padding: 0px;
 }
 
-.fa-solid,
-.fa-regular {
-  color: #009688;
-}
-.progress-bar {
-  background-color: #009688;
-}
-footer {
-  background-color: #009688;
-}
 .text-green {
   color: #009688;
 }

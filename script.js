@@ -8,13 +8,13 @@
   let div = document.createElement("div");
   div.className = "d-flex align-items-center gap-3";
   div.innerHTML = `
-        <i class="fa-solid ${element.icon}"></i>
+        <i class="fa-solid text-green ${element.icon}"></i>
         <div>${element.text}</div>
     `;
   document.getElementById("section1").append(div);
 });
 
-// section 2
+// Skills
 [
   { skill: "Adobe Photoshop", percent: 90 },
   { skill: "Photography", percent: 80 },
@@ -33,14 +33,14 @@
       aria-valuemin="0"
       aria-valuemax="100"
     >
-      <div class="progress-bar" style="width: ${element.percent}%">
+      <div class="progress-bar bg-green" style="width: ${element.percent}%">
         ${element.percent}%
       </div>
     </div>`;
   document.querySelectorAll("#section2 div")[1].append(div);
 });
 
-// section 3
+// Languages
 [
   { laguage: "English", percent: 100 },
   { laguage: "Spanish", percent: 48 },
@@ -58,7 +58,7 @@
         aria-valuemin="0"
         aria-valuemax="100"
       >
-        <div class="progress-bar" style="width: ${element.percent}%">
+        <div class="progress-bar bg-green" style="width: ${element.percent}%">
         </div>
       </div>`;
   document.querySelectorAll("#section3 div")[1].append(div);
@@ -76,13 +76,13 @@
   let a = document.createElement("a");
   a.className =
     "link-light link-opacity-50 link-opacity-100-hover text-decoration-none";
-  a.innerHTML = `<i class="fa-brands fa-${element} me-2"></i>`;
+  a.innerHTML = `<i class="fa-brands fa-${element}  me-2"></i>`;
   a.href = "https://";
 
   document.getElementById("socialMedia").append(a);
 });
 
-//Right section work experience
+//work experience
 [
   {
     work: "Front End Developer / w3schools.com",
@@ -108,7 +108,7 @@
   } p-3 d-flex flex-column gap-1`;
   div.innerHTML = `
     <h5 class="text-secondary">${element.work}</h5>
-    <h6 class="fw-normal text-green"><i class="fa-regular fa-calendar-days me-3"></i>${
+    <h6 class="fw-normal text-green"><i class="fa-regular fa-calendar-days text-green me-3"></i>${
       element.duration.includes("Current")
         ? element.duration.slice(0, element.duration.indexOf("Current")) +
           `<span class="badge bg-green  p-2 ">Current</span>`
@@ -120,7 +120,7 @@
   document.getElementById("experience").append(div);
 });
 
-//Right section education
+//education
 [
   {
     place: "W3Schools.com",
